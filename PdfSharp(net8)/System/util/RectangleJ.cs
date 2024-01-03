@@ -41,7 +41,8 @@
     address: sales@itextpdf.com
  */
 
-using PdfSharp_net8_.iTextSharp.awt.geom;
+using PdfSharp_net8_.Helper.awt.geom;
+using PdfSharp_net8_.Helper.text;
 
 namespace PdfSharp_net8_.System.util {
     public class RectangleJ {
@@ -62,7 +63,7 @@ namespace PdfSharp_net8_.System.util {
             this.height = height;
         }
 
-        public RectangleJ(iTextSharp.text.Rectangle rect) {
+        public RectangleJ(Rectangle rect) {
             rect.Normalize();
             x = rect.Left;
             y = rect.Bottom;

@@ -73,7 +73,7 @@ namespace PdfSharp_net8_.System.util.collections
 
         public bool AddAndCheck(T item)
         {
-            Object o = null;
+            object o = null;
             if (set.TryGetValue(item, out o)) {
                 return false;
             }

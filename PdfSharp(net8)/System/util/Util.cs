@@ -123,8 +123,8 @@ namespace PdfSharp_net8_.System.util {
                 return false;
 
             for (int i = 0; i < length; i++) {
-                Object o1 = a[i];
-                Object o2 = b[i];
+                object o1 = a[i];
+                object o2 = b[i];
                 if (!(o1 == null ? o2 == null : o1.Equals(o2)))
                     return false;
             }

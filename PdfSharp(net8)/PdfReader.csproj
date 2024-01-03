@@ -1,0 +1,1486 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>PdfSharp_net8_</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Helper\text\error_messages\en.lng" />
+    <None Remove="Helper\text\error_messages\nl.lng" />
+    <None Remove="Helper\text\error_messages\pt.lng" />
+    <None Remove="Helper\text\pdf\fonts\Courier-Bold.afm" />
+    <None Remove="Helper\text\pdf\fonts\Courier-BoldOblique.afm" />
+    <None Remove="Helper\text\pdf\fonts\Courier-Oblique.afm" />
+    <None Remove="Helper\text\pdf\fonts\Courier.afm" />
+    <None Remove="Helper\text\pdf\fonts\glyphlist.txt" />
+    <None Remove="Helper\text\pdf\fonts\Helvetica-Bold.afm" />
+    <None Remove="Helper\text\pdf\fonts\Helvetica-BoldOblique.afm" />
+    <None Remove="Helper\text\pdf\fonts\Helvetica-Oblique.afm" />
+    <None Remove="Helper\text\pdf\fonts\Helvetica.afm" />
+    <None Remove="Helper\text\pdf\fonts\Symbol.afm" />
+    <None Remove="Helper\text\pdf\fonts\Times-Bold.afm" />
+    <None Remove="Helper\text\pdf\fonts\Times-BoldItalic.afm" />
+    <None Remove="Helper\text\pdf\fonts\Times-Italic.afm" />
+    <None Remove="Helper\text\pdf\fonts\Times-Roman.afm" />
+    <None Remove="Helper\text\pdf\fonts\ZapfDingbats.afm" />
+    <None Remove="Helper\xmp\impl\package.html" />
+    <None Remove="Helper\xmp\impl\xpath\package.html" />
+    <None Remove="Helper\xmp\options\package.html" />
+    <None Remove="Helper\xmp\package.html" />
+    <None Remove="Helper\xmp\properties\package.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Helper\xmp\impl\package.html" />
+    <Content Include="Helper\xmp\impl\xpath\package.html" />
+    <Content Include="Helper\xmp\options\package.html" />
+    <Content Include="Helper\xmp\package.html" />
+    <Content Include="Helper\xmp\properties\package.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Helper\text\error_messages\en.lng" />
+    <EmbeddedResource Include="Helper\text\error_messages\nl.lng" />
+    <EmbeddedResource Include="Helper\text\error_messages\pt.lng" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Courier-Bold.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Courier-BoldOblique.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Courier-Oblique.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Courier.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\glyphlist.txt" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Helvetica-Bold.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Helvetica-BoldOblique.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Helvetica-Oblique.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Helvetica.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Symbol.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Times-Bold.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Times-BoldItalic.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Times-Italic.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\Times-Roman.afm" />
+    <EmbeddedResource Include="Helper\text\pdf\fonts\ZapfDingbats.afm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Helper\text\Anchor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Annotation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\BadElementException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\BaseColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Chapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ChapterAutoNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Chunk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\DocumentException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\DocWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Element.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\error_messages\MessageLocalization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\exceptions\BadPasswordException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\exceptions\IllegalPdfSyntaxException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\exceptions\InvalidImageException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\exceptions\InvalidPdfException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\exceptions\UnsupportedPdfException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\factories\GreekAlphabetFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\factories\RomanAlphabetFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\factories\RomanNumberFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Font.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\FontFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\FontFactoryImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\GreekList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Header.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\html\HtmlEncoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\html\HtmlTags.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\html\simpleparser\ChainedProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\html\simpleparser\HTMLWorker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\html\simpleparser\IImageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\html\simpleparser\StyleSheet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\html\WebColors.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\IDocListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\IElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\IElementListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\IFontProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ILargeElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Image.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ImgCCITT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ImgJBIG2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ImgRaw.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ImgTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ImgWMF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\ArrayRandomAccessSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\GetBufferedRandomAccessSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\GroupedRandomAccessSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\IndependentRandomAccessSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\IRandomAccessSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\RAFRandomAccessSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\RandomAccessSourceFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\RASInputStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\StreamUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\io\WindowRandomAccessSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\IRtfElementInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ISplitCharacter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ITextElementArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Jpeg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Jpeg2000.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\List.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ListBody.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ListItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ListLabel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\log\CounterFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\log\ICounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\log\NoOpCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\log\SysoCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\MarkedObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\MarkedSection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Meta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\PageSize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Paragraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\AcroFields.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BadPdfFormatException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\Barcode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\Barcode128.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\Barcode39.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodeCodabar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodeDatamatrix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodeEAN.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodeEANSUPP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodeInter25.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodePDF417.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodePostnet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BarcodeQRCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BaseField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BaseFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BidiLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\BidiOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\ByteBuffer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\CFFFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\CFFFontSubset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\CJKFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\CMapAwareDocumentFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\CMYKColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\BitFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\BmpImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\CCITTG4Encoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\GifImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\JBIG2Image.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\JBIG2SegmentReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\PngImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\PngWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TIFFConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TIFFDirectory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TIFFFaxDecoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TIFFFaxDecompressor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TIFFField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TiffImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TIFFLZWDecoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\TiffWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\wmf\InputMeta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\wmf\MetaBrush.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\wmf\MetaDo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\wmf\MetaFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\wmf\MetaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\wmf\MetaPen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\codec\wmf\MetaState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\collection\PdfCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\collection\PdfCollectionField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\collection\PdfCollectionItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\collection\PdfCollectionSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\collection\PdfCollectionSort.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\collection\PdfTargetDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\ColorDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\ColumnText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\crypto\AESCipher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\crypto\ARCFOUREncryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\crypto\IVGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\DefaultSplitCharacter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\DocumentFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\draw\DottedLineSeparator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\draw\IDrawInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\draw\LineSeparator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\draw\VerticalPositionMark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\EnumerateTTC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\events\FieldPositioningEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\events\IndexEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\events\PdfPageEventForwarder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\events\PdfPCellEventForwarder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\events\PdfPTableEventForwarder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\ExtendedColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\FdfReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\FdfWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\FontDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\FontSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\fonts\cmaps\IdentityToUnicode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\GlyphList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\GrayColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\HyphenationAuto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\ByteVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\CharVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\Hyphen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\Hyphenation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\HyphenationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\HyphenationTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\Hyphenator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\IPatternConsumer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\SimplePatternParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\hyphenation\TernaryTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\ICC_Profile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\IExtraEncoding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\IHyphenationEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IAccessibleElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IAlternateDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfAnnotations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfDocumentActions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfEncryptionSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfPageActions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfRunDirection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfViewerPreferences.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\interfaces\IPdfXConformance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\intern\PdfAnnotationsImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\intern\PdfVersionImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\intern\PdfViewerPreferencesImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\intern\PdfXConformanceImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\IntHashtable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\IPdfOCG.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\IPdfPageEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\IPdfPCellEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\IPdfPTableEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\languages\ArabicLigaturizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\languages\DevanagariLigaturizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\languages\GujaratiLigaturizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\languages\HebrewProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\languages\ILanguageProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\languages\IndicLigaturizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\LZWDecoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\OutputStreamCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\OutputStreamEncryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PageResources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\ContentByteUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\FilteredRenderListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\FilteredTextRenderListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\GraphicsState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\IContentOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\ImageRenderInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\IRenderListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\ITextExtractionStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\IXObjectDoHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\LineSegment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\LocationTextExtractionStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\MarkedContentInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\MarkedContentRenderFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\Matrix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\PdfContentReaderTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\PdfContentStreamProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\PdfImageObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\PdfReaderContentParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\PdfTextExtractor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\RegionTextRenderFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\RenderFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\SimpleTextExtractionStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\TaggedPdfReaderTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\TextMarginFinder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\TextRenderInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\parser\Vector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PatternColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfAcroForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfAnnotation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfAppearance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfArtifact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfBody.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfBoolean.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfBorderArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfBorderDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfChunk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfContentByte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfContentParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfContents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfCopy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfCopyFields.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfCopyFieldsImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfCopyForms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfCopyFormsImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfDashPattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfDate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfDestination.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfDeveloperExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfEFStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfEncodings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfEncryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfEncryptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfFileSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfFormField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfFormXObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfGState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfICCBased.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfImportedPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfIndirectObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfIndirectReference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfLayerMembership.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfLiteral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfMediaClipData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfNameTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfNull.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfNumberTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfOCProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfOutline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPageEventHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPageLabels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPages.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPatternPainter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPCell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPHeaderCell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPSXObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPTableBody.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPTableEventAfterSplit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPTableFooter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPTableHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPublicKeyRecipient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfPublicKeySecurityHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfReaderInstance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfRectangle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfRendition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfResources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfShading.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfShadingPattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfSignature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfSignatureAppearance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfSmartCopy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfSpotColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfStamper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfStamperImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfStructureElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfStructureTreeRoot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfTextArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfTransition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfTransparencyGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfVisibilityExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PdfXConformanceException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\Pfm2afm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PRAcroForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PRIndirectReference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PRStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PRTokeniser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\PushbuttonField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\BitArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\BitMatrix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\BitVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\BlockPair.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\ByteArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\ByteMatrix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\CharacterSetECI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\EncodeHintType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\Encoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\ErrorCorrectionLevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\FormatInformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\GF256.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\GF256Poly.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\MaskUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\MatrixUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\Mode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\QRCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\QRCodeWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\ReedSolomonEncoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\ReedSolomonException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\Version.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\qrcode\WriterException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\RadioCheckField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\RandomAccessFileOrArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\security\ExternalBlankSignatureContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\security\IExternalSignatureContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\security\IXmlLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\security\IXpathConstructor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\security\MakeXmlSignature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\SequenceList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\ShadingColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\SimpleBookmark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\SimpleNamedDestination.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\SpotColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\StampContent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\StandardDecryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\TextField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\TrueTypeFont.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\TrueTypeFontSubSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\TrueTypeFontUnicode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\Type1Font.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\Type3Font.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\Type3Glyph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\VerticalText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\XfaForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\XfaXmlLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\XfaXpathConstructor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\XfdfReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\pdf\XmlSignatureAppearance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Phrase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Rectangle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\RectangleReadOnly.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\RomanList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Section.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\SpecialSymbol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\TabSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\TabSplitCharacter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\TabStop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\Utilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\ParserBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\simpleparser\EntitiesToSymbol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\simpleparser\EntitiesToUnicode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\simpleparser\IanaEncodings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\simpleparser\ISimpleXMLDocHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\simpleparser\ISimpleXMLDocHandlerComment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\simpleparser\SimpleXMLParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\DublinCoreProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\DublinCoreSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\EncodingNoPreamble.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\LangAlt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\PdfProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\PdfSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpBasicProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpBasicSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpMMProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpMMSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\xml\xmp\XmpWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ZapfDingbatsList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\text\ZapfDingbatsNumberList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\Base64.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\ByteBuffer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\CountOutputStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\FilterReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\FixAsciiControlsReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\Iso8601Converter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\Latin1Converter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\ParameterAsserts.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\ParseRdf.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\PushbackReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\QName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpDateTimeImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpIteratorImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpMetaImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpMetaParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpNodeUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpNormalizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpSchemaRegistryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpSerializerHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpSerializerRdf.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\XmpUtilsImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\xpath\XmpPath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\xpath\XmpPathParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\impl\xpath\XmpPathSegment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\IXmpDateTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\IXmpIterator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\IXmpMeta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\IXmpSchemaRegistry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\IXmpVersionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\options\AliasOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\options\IteratorOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\options\ParseOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\options\PropertyOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\options\SerializeOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\options\XmpOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\properties\IXmpAliasInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\properties\IXmpProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\properties\IXmpPropertyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpCalendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpConst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpDateTimeFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpMetaFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpPathFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Helper\xmp\XmpUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\collections\HashSet2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\collections\OrderedTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\FilterStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\ListIterator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\Properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\PushbackStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\RectangleJ.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\StringTokenizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\Util.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\Adler32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\Deflate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\InfBlocks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\InfCodes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\Inflate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\InfTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\JZlib.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\StaticTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\Tree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\ZDeflaterOutputStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\ZInflaterInputStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="System\util\zlib\ZStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

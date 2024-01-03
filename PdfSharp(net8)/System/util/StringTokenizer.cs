@@ -46,18 +46,18 @@ namespace PdfSharp_net8_.System.util {
     // a replacement for the StringTokenizer java class
     public class StringTokenizer {
         private int pos;
-        private String str;
+        private string str;
         private int len;
-        private String delim;
+        private string delim;
         private bool retDelims;
 
-        public StringTokenizer(String str) : this(str, " \t\n\r\f", false) {
+        public StringTokenizer(string str) : this(str, " \t\n\r\f", false) {
         }
 
-        public StringTokenizer(String str, String delim) : this(str, delim, false) {
+        public StringTokenizer(string str, string delim) : this(str, delim, false) {
         }
 
-        public StringTokenizer(String str, String delim, bool retDelims) {
+        public StringTokenizer(string str, string delim, bool retDelims) {
             len = str.Length;
             this.str = str;
             this.delim = delim;
@@ -73,12 +73,12 @@ namespace PdfSharp_net8_.System.util {
             return pos < len;
         }
 
-        virtual public String NextToken(String delim) {
+        virtual public string NextToken(string delim) {
             this.delim = delim;
             return NextToken();
         }
 
-        virtual public String NextToken() {
+        virtual public string NextToken() {
             if (pos < len && delim.IndexOf(str[pos]) >= 0) {
                 if (retDelims)
                     return str.Substring(pos++, 1);

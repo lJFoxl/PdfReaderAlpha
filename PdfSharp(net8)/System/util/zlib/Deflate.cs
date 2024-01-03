@@ -83,7 +83,7 @@ namespace PdfSharp_net8_.System.util.zlib {
             config_table[9]=new Config(32, 258,  258, 4096, SLOW);
         }
 
-        private static readonly String[] z_errmsg = {
+        private static readonly string[] z_errmsg = {
                                                "need dictionary",     // Z_NEED_DICT       2
                                                "stream end",          // Z_STREAM_END      1
                                                "",                    // Z_OK              0

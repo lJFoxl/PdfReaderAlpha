@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PdfReader2(net8)\PdfReader2(net8).csproj" />
+    <ProjectReference Include="..\PdfSharp(net8)\PdfReader.csproj" />
   </ItemGroup>
 
 </Project>
